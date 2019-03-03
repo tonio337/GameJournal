@@ -1,0 +1,9 @@
+3/3/19
+
+Prior to today, made a bare-bones skeleton UI in Android app. Added types for Game and Journal (with internal Entry).  Started to populate sample data (manually, could not get SampleData Android Tools function to work).
+
+Today, expanded Journal functionality the littlest bit and expanded Unit test (63% coverage as of today). Installed and configured Git local repository. Pushed out to remote repository on Github. (Also made prior personal repoistories on Github private.)
+
+Established API key for IDGB game database. Intend to use IDGB for game data lookup rather than storing it manually.
+
+Finally, will likely use this file's notes to base the commit message, until I'm more comfortable with Git commits.
