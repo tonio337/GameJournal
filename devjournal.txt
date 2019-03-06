@@ -1,3 +1,11 @@
+3/6/19
+
+Added a "static factory" function to Journal to more efficiently create a demo, or dummy, journal in which to test with.
+
+Created text fields on Journal Activity to display dummy data within the app.
+
+Created Entry Activity layout to use for viewing, editing, and creating new journal entries.
+
 3/3/19
 
 Prior to today, made a bare-bones skeleton UI in Android app. Added types for Game and Journal (with internal Entry).  Started to populate sample data (manually, could not get SampleData Android Tools function to work).

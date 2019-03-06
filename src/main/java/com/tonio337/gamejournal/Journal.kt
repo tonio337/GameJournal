@@ -2,6 +2,14 @@ package com.tonio337.gamejournal
 
 class Journal{
 
+    companion object {
+        fun demo() = Journal().apply {
+            entryList.forEach<Entry> { entry ->
+                addEntry(entry)
+            }
+        }
+    }
+
     data class Entry(val game: Game, var title: String, var text: String){
 
         companion object{
@@ -11,7 +19,7 @@ class Journal{
         val id = nextID++
     }
 
-    private val entries = mutableListOf<Entry>()
+    val entries = mutableListOf<Entry>()
 
     val titles
         get() = entries.map{it.title}

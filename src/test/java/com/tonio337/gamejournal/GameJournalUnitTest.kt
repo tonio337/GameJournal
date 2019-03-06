@@ -11,6 +11,8 @@ import org.junit.Assert.*
  */
 class GameJournalUnitTest {
 
+    val journal = Journal.demo()
+
     @Test
     fun game_isCreated() {
         assertEquals("Super Mario Bros. 2", Game("Super Mario Bros. 2").name)
