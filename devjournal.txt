@@ -1,3 +1,7 @@
+3/7/19
+
+Added FAB functionality for both new and editable entries. Intent extras aren't quite passing right, but I'll get there.
+
 3/6/19
 
 Added a "static factory" function to Journal to more efficiently create a demo, or dummy, journal in which to test with.

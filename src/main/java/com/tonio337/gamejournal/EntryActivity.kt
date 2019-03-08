@@ -2,9 +2,10 @@ package com.tonio337.gamejournal
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_entry.*
+import kotlinx.android.synthetic.main.content_entry.*
 
 class EntryActivity : AppCompatActivity() {
 
@@ -18,6 +19,24 @@ class EntryActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        populateFields()
+
+        intent.getStringExtra("id")?.let{
+            populateEntry(it.toInt())
+        }
+
+    }
+
+    private fun populateFields() {
+
+    }
+
+    private fun populateEntry(id: Int){
+        val entry = journal.entries[id]
+        //spinner.setSelection(2)
+        editText.setText(entry.title)
+        editText2.setText(entry.text)
     }
 
 }

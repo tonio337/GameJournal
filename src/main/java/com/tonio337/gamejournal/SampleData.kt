@@ -23,3 +23,5 @@ val entryList = listOf(
             |About to give up. Or maybe just look at a guide or something.
         """.trimMargin())
 )
+
+val journal = Journal.demo()
