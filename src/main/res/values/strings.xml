@@ -3,4 +3,6 @@
     <string name="game_journal">Game Journal</string>
     <string name="testTitleView">Titles</string>
     <string name="title_activity_entry">EntryActivity</string>
+    <string name="journal_listing">%1$s - %2$s</string>
+    <string name="title_activity_games">GamesActivity</string>
 </resources>

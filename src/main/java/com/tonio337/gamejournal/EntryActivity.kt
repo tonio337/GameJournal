@@ -1,5 +1,6 @@
 package com.tonio337.gamejournal
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -20,20 +21,18 @@ class EntryActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        populateFields()
-
-        intent.getStringExtra("id")?.let{
-            populateEntry(it.toInt())
+        button.setOnClickListener {
+            intent = Intent(this, GamesActivity::class.java)
+            startActivity(intent)
         }
 
-    }
-
-    private fun populateFields() {
-
+        populateEntry(intent.getIntExtra("id", -1))
     }
 
     private fun populateEntry(id: Int){
-        val entry = journal.entries[id]
+        // val entry = journal.entries[id]
+
+        val entry = journal.entries.firstOrNull{it.id == id} ?: return
         //spinner.setSelection(2)
         editText.setText(entry.title)
         editText2.setText(entry.text)

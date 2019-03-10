@@ -21,7 +21,7 @@ class JournalActivity : AppCompatActivity() {
     private fun populateEntries() {
         journal.entries.forEach { entry ->
             linearLayout.addView(TextView(this).apply {
-                text = entry.title + " - " + entry.game.name
+                text = getString(R.string.journal_listing, entry.title, entry.game.name)
             })
         }
     }

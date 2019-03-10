@@ -1,3 +1,19 @@
+3/9/19
+
+Walked through Android Room with a View codelab (https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/)
+
+Set up Room with the Game class. Created GamesActivity to display currently saved games.
+
+Intend to add options to lookup from IDGB, to locally add or remove games.
+
+May add option to add game data offline, then sync with official IDGB game entry once back online.
+
+3/8/19
+
+Added resource strings and removed hard-coded strings from UI.
+
+Added set up for Room Persistence Database, which will be used to store local Game data.
+
 3/7/19
 
 Added FAB functionality for both new and editable entries. Intent extras aren't quite passing right, but I'll get there.

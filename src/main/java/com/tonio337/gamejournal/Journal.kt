@@ -4,17 +4,13 @@ class Journal{
 
     companion object {
         fun demo() = Journal().apply {
-            entryList.forEach<Entry> { entry ->
-                addEntry(entry)
-            }
+            entryList.forEach { addEntry(it) }
         }
     }
 
     data class Entry(val game: Game, var title: String, var text: String){
 
-        companion object{
-            var nextID = 0
-        }
+        companion object{ var nextID = 0 }
 
         val id = nextID++
     }
