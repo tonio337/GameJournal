@@ -1,3 +1,9 @@
+3/11/19
+
+Reconsidering the use of IGDB, as their LiveData tests gives 403 - Forbidden errors. Also, Java's HTTP requests sucks.
+
+Will attempt once more with khttp library. Then likely find another game database that works.
+
 3/9/19
 
 Walked through Android Room with a View codelab (https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/)
