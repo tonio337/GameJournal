@@ -1,3 +1,13 @@
+3/12/19
+
+Signed up for Giant Bomb API instead. Gained successful requests.
+
+Added khttp library for easy times.
+
+Adjusted Game class to hold resID (as defined by Giant Bomb). Also can request by resID as well as query for a given term.
+
+Game On!
+
 3/11/19
 
 Reconsidering the use of IGDB, as their LiveData tests gives 403 - Forbidden errors. Also, Java's HTTP requests sucks.

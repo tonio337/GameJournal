@@ -4,7 +4,7 @@ val gameTitles = listOf("Super Mario Bros.",
                         "Contra",
                         "Metroid")
 
-val games = gameTitles.map{Game(it)}
+val games = gameTitles.map{Game("_", it)}
 
 val entryList = listOf(
     Journal.Entry(games[0],"The Classic",

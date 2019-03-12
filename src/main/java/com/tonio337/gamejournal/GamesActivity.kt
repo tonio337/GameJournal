@@ -50,7 +50,7 @@ class GamesActivity : AppCompatActivity() {
         if (requestCode == newGameActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.let {
                 // get new game data from NewGameActivity result
-                val game = Game("New Game")
+                val game = Game("_", "New Game")
                 gameViewModel.insert(game)
             }
         } else {
