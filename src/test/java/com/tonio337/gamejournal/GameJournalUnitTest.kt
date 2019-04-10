@@ -1,5 +1,7 @@
 package com.tonio337.gamejournal
 
+import io.mockk.every
+import io.mockk.mockk
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -15,12 +17,37 @@ class GameJournalUnitTest {
 
     @Test
     fun game_isCreated() {
-        assertEquals("Super Mario Bros. 2", Game("Super Mario Bros. 2").name)
+        assertEquals("Super Mario Bros. 2", Game("0","Super Mario Bros. 2").name)
     }
 
     @Test
     fun journal_getFuns(){
         // games and journal are defined in SampleData
         assertEquals(games, journal.games)
+    }
+}
+
+class GameJournalUnitMockTest {
+
+    class SystemUnderTest(
+        val game: Game,
+        val entry: Journal.Entry
+    ){
+        fun calculate(){
+
+        }
+    }
+
+    @Test
+    fun addGameToEntry(){
+        val entry = mockk<Journal.Entry>()
+        val game = mockk<Game>()
+
+        every { game.name } returns "Metroid"
+        every { entry.title } returns "Run and Gun Fun"
+
+        val sut = SystemUnderTest(game, entry)
+
+        sut.calculate()
     }
 }

@@ -15,11 +15,21 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
     }
     buildTypes {
+        debug {
+            buildConfigField 'String', "GiantBombApiKey", GiantBomb_ApiKey
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "GiantBombApiKey", GiantBomb_ApiKey
         }
     }
 }
@@ -47,4 +57,9 @@ dependencies {
     // Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
+    compile "khttp:khttp:0.1.0"
+    compile 'com.android.volley:volley:1.1.1'
+
+    testImplementation "io.mockk:mockk:1.9"
 }

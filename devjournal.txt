@@ -1,3 +1,56 @@
+4/10/19
+
+Just performed a rebase on my project.
+
+The branch dealing with external database connections extended way past its purpose.
+
+Performed a rebase rather than a merge, to get master back to a single state.
+db branch was nowhere near function ready, and was starting to encroach on other master features.
+
+Will continue expanding on master, and move to branches when more appropriate.
+
+4/3/19
+
+Took an extended break...
+
+First priority will be to ensure Journal and Entry activities are minimalistically working.
+
+Second priority will be to conflate the two into a single activity with multiple fragments (views).
+
+3/20/19
+
+Incorporated MockK library to introduce mock testing.
+
+Need to determine how it's useful and when to appropriately use it.
+
+3/19/19
+
+Feel like I'm starting to lose control of this project. So I'm going to back up and reassess.
+
+I have 3 different activities, a Journal Viewer, a Entry Viewer/Editor, and a Game DB Viewer/Adder.
+
+I'm now using Volley to submit http requests. khttp would require managing Coroutines, since network requests should never be run on the Main thread.
+
+I'm also using Room to create a persistent database for local game storage. I will need to create another table for Entry storage.
+
+I'll likely refactor some of my functions to more accurately fit within this mold.
+
+3/12/19
+
+Signed up for Giant Bomb API instead. Gained successful requests.
+
+Added khttp library for easy times.
+
+Adjusted Game class to hold resID (as defined by Giant Bomb). Also can request by resID as well as query for a given term.
+
+Game On!
+
+3/11/19
+
+Reconsidering the use of IGDB, as their LiveData tests gives 403 - Forbidden errors. Also, Java's HTTP requests sucks.
+
+Will attempt once more with khttp library. Then likely find another game database that works.
+
 3/9/19
 
 Walked through Android Room with a View codelab (https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/)

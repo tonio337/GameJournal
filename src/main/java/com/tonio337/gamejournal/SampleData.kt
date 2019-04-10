@@ -4,7 +4,14 @@ val gameTitles = listOf("Super Mario Bros.",
                         "Contra",
                         "Metroid")
 
-val games = gameTitles.map{Game(it)}
+ val games = gameTitles.map{Game("_", it)}
+
+// Giant Bomb API Resource IDs (Super Mario Bros., Contra, Metroid)
+/*val resIDs = listOf("3030-24621",
+                    "3030-21761",
+                    "3030-4350")
+
+val games = resIDs.map{getGame(it)!!}*/
 
 val entryList = listOf(
     Journal.Entry(games[0],"The Classic",

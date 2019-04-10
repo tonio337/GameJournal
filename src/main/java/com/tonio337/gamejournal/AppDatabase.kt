@@ -19,15 +19,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-
 @Dao
 interface GameDao{
 
-    @Query("SELECT * from games_table ORDER BY name ASC")
+    @Query(GET_ALL_GAMES_QUERY)
     fun getAllGames(): LiveData<List<Game>>
-
-    @Query("SELECT name from games_table ORDER BY name ASC")
-    fun getAllNames(): LiveData<List<String>>
 
     @Insert
     fun insert(game: Game)
@@ -80,8 +76,6 @@ abstract class AppDatabase : RoomDatabase() {
 class AppRepository(private val gameDao: GameDao){
     val allGames: LiveData<List<Game>> = gameDao.getAllGames()
 
-    val allNames: LiveData<List<String>> = gameDao.getAllNames()
-
     @WorkerThread
     fun insert(game: Game){
         gameDao.insert(game)
@@ -117,7 +111,7 @@ class GameViewModel(application: Application): AndroidViewModel(application){
     }
 }
 
-class GameListAdapter internal constructor( context: Context) :
+class GameListAdapter internal constructor( context: Context ) :
     RecyclerView.Adapter<GameListAdapter.GameViewHolder>(){
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
